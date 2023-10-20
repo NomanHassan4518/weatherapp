@@ -30,12 +30,12 @@ const Navbar = () => {
     localStorage.setItem("city" ,currentCity)
     return (
         <div className='pt-5 px-5'>
-            <div className='flex justify-between items-center '>
-                <div className='flex pl-16 items-center  space-x-36'>
+            <div className='flex lg:flex-row flex-col justify-between items-center '>
+                <div className='flex xl:pl-16 lg:10 items-center  xl:space-x-36 lg:space-x-20 md:space-x-12 space-x-5'>
                     <div >
                         <h1 className='font-semibold text-3xl'>ClearSky</h1>
                     </div>
-                    <div className='  w-96'>
+                    <div className='md:w-96 w-40'>
 
                         <form>
                             <div class="relative">
@@ -51,8 +51,8 @@ const Navbar = () => {
                     </div >
                 </div>
 
-                <div className='flex items-center space-x-9 pr-7'>
-                    <div className='  flex space-x-1 font-semibold text-[1.1rem]'>
+                <div className='flex items-center space-x-9 md:pr-7 pr-0 xl:mt-0 mt-5 '>
+                    <div className='  flex space-x-1 font-semibold text-sm md:text-[1.1rem]'>
                         <p>{formattedTime}</p>
                     </div>
                     <div className=' flex space-x-6 text-[#3c3e3f] bg-white p-1 rounded-md text-2xl'>
