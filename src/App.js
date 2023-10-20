@@ -5,7 +5,6 @@ import { useQuery } from '@tanstack/react-query';
 
 
 function App() {
-  // let [city , setCity]=useState("Islamabad")
   let cityName = localStorage.getItem("city")
   const { data } = useQuery({
     queryKey: ['repoData'],
