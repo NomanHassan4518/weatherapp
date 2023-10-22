@@ -7,14 +7,14 @@ import { useQuery } from '@tanstack/react-query';
 function App() {
   let cityName = localStorage.getItem("city")
   const { data } = useQuery({
-    queryKey: ['repoData'],
+    queryKey: ['weather'],
     queryFn: () =>
-      fetch(`http://api.weatherapi.com/v1/current.json?key=2088ff9aa4684eca955134251231910&q=${cityName}&aqi=yes`).then(
+      fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&APPID=5555e631eb25d2ee80e48fc82a3ae893`).then(
         (res) => res.json(),
       ),
   })
 
-
+console.log(data);
 
   return (
     <div className="bg-[#f5f2ed]">

@@ -6,43 +6,43 @@ import { GiPressureCooker } from 'react-icons/gi'
 
 const Home = (props) => {
   let weatherData = props.data;
+  console.log(weatherData);
 
   let weatherDetails = [
     {
       name: "Current Temperature",
-      temp: `${weatherData?.current.temp_c}°C`,
+      temp: `${weatherData?.main.temp}°C`,
       icon: <LiaCloudSolid />
     },
     {
       name: "Wind Speed",
-      temp: `${weatherData?.current.wind_kph}Km/h`,
+      temp: `${weatherData?.wind.speed}Km/h`,
       icon: <TiWeatherWindy />
     },
     {
       name: "Humidity",
-      temp: `${weatherData?.current.humidity}%`,
+      temp: `${weatherData?.main.humidity}%`,
       icon: <WiHumidity />
     },
     {
       name: "Pressure",
-      temp: `${weatherData?.current.pressure_mb}mb`,
+      temp: `${weatherData?.main.pressure}mb`,
       icon: <GiPressureCooker />
     },
   ]
   return (
-    <div className='xl:px-16 md:px-10 px-3 mt-8 pb-8'>
+    <div className='xl:px-16 md:px-10 px-3 mt-8 pb-10'>
       <div className='pb-12 pl-10' style={{ backgroundImage: `url("https://img.freepik.com/free-vector/gorgeous-clouds-background-with-blue-sky-design_1017-25501.jpg") `, backgroundSize: "100% 500px", backgroundRepeat: "no-repeat", width: "100%", height: "400px", borderRadius: "12px" }}>
 
         <p className='font-semibold ,  text-3xl md:text-6xl pt-12 '>
-          <span>{weatherData?.location.name} , </span>
-          <span>{weatherData?.location.country}</span>
+          <span>{weatherData?.name} , </span>
         </p>
         <p className='font-semibold , text-4xl pt-5 '>
-          <span>{weatherData?.current.temp_c}°C</span>
-          <span className='ml-10'>{weatherData?.current.condition.text}</span>
+          <span>{weatherData?.main.temp}°C</span>
+          <span className='ml-10'>{weatherData?.weather[0].main}</span>
         </p>
-        <p className='mt-4 text-2xl '>Local Time: {weatherData?.location.localtime}</p>
-        <p className='mt-4 text-2xl '>Feels Like: {weatherData?.current.feelslike_c}°C</p>
+        {/* <p className='mt-4 text-2xl '>Local Time: {weatherData?.location.localtime}</p> */}
+        <p className='mt-4 text-2xl '>Feels Like: {weatherData?.main.feels_like}°C</p>
       </div>
 
       <div className='grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mt-3  '>
