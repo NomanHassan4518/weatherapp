@@ -46,7 +46,7 @@ const Home = (props) => {
         {/* <p className='mt-4 text-2xl '>Feels Like: {weatherData?.main.feels_like}°C</p> */}
       </div>
 
-      <div className='grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mt-3  '>
+      <div className='grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mt-1  '>
         {
           weatherDetails.map((data, index)  => (
             <div key={index} className='bg-white rounded-md text-black mt-3 md:mt-7 mx-4   px-3 py-2'>

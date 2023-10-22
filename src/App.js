@@ -19,7 +19,6 @@ function App() {
     return <Spinner/>
   }
 
-console.log(data);
 
   return (
     <div className="bg-[#f5f2ed]">
