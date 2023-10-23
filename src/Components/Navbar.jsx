@@ -4,26 +4,14 @@ import { VscAccount } from 'react-icons/vsc'
 import { MdOutlineFolderCopy } from 'react-icons/md'
 
 const Navbar = () => {
-    // const [currentTime, setCurrentTime] = useState(new Date());
     const [searchValue, setSearchValue] = useState('');
 
     const handleSearchChange = (event) => {
         setSearchValue(event.target.value);
     };
 
-    const handleSearchSubmit = (event) => {
-        if (event.key === 'Enter') {
-            if (searchValue.trim() !== '') {
-              localStorage.setItem('city', searchValue);
-              setSearchValue(searchValue);
-            } else {
-              alert('Please enter a valid search term.');
-            }
-          }
-    };
     let time = new Date()
     localStorage.setItem('city', searchValue);
-   console.log(searchValue);
 
     const options = {
         weekday: 'long',
@@ -43,28 +31,16 @@ const Navbar = () => {
                     </div>
                     <div className='md:w-96 w-40'>
 
-                        <form onSubmit={handleSearchSubmit}>
-                            <div class="relative">
-                                <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                                    <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                        <form >
+                            <div className="relative">
+                                <div  className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                                    <svg  className="w-4 h-4 cursor-pointer text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                                        <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
                                     </svg>
                                 </div>
-                                <input type="search" value={searchValue} onChange={handleSearchChange} id="default-search" className="block w-full p-2 pl-10 text-sm text-gray-900 border border-white rounded-lg bg-white focus:ring-0 focus:outline-none" placeholder="Search Location" />
+                                <input type="search" value={searchValue} onChange={handleSearchChange} className="block w-full p-2 pl-10 text-sm text-gray-900 border border-white rounded-lg bg-white focus:ring-0 focus:outline-none" placeholder="Search Location" />
                             </div>
                         </form>
-                        {/* <div>
-
-                            <form onSubmit={handleSearchSubmit}>
-                                <input
-                                    type="search"
-                                    className="block w-full p-2 pl-10 text-sm text-gray-900 border border-white rounded-lg bg-white focus:ring-0 focus:outline-none" placeholder="Search Location"
-                                    value={searchValue}
-                                    onChange={handleSearchChange}
-                                />
-                            </form>
-                        </div> */}
-
                     </div >
                 </div>
 

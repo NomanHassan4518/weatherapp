@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { LiaCloudSolid } from 'react-icons/lia'
 import { TiWeatherWindy } from 'react-icons/ti'
 import { WiHumidity } from 'react-icons/wi'
