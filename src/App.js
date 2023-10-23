@@ -21,7 +21,7 @@ function App() {
 
 
   return (
-    <div className="bg-[#f5f2ed]">
+    <div className="bg-[#f5f2ed] satisfy">
       <div>
         <Navbar/>
       </div>
