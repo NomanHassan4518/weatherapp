@@ -33,8 +33,9 @@ const Home = (props) => {
   ]
   return (
     <div className='xl:px-16 md:px-10 px-3 mt-8 pb-7 '>
-      <div className='pb-12 pl-10 shadow-xl ' style={{ backgroundImage: `url("https://wallpaper-house.com/data/out/9/wallpaper2you_325754.jpg") `, backgroundSize: "100% 420px", backgroundRepeat: "no-repeat", width: "100%", height: "420px", borderRadius: "12px" }}>
-        <p className='font-semibold  text-3xl md:text-6xl pt-12  '>
+   <div style={{width:"100%" , height:"420px"}} className='shadow-xl rounded-[12px] ' >
+   <div className='pb-12 pl-10 ' style={{ width: "100%", height: "100%", backgroundImage: `url("https://wallpaper-house.com/data/out/9/wallpaper2you_325754.jpg") `, backgroundSize: "cover", backgroundPosition:"center center", backgroundRepeat: "no-repeat",  borderRadius: "12px" }}>
+        <p className='font-semibold  text-4xl md:text-6xl pt-12  '>
           <span>{weatherData?.name} , {weatherData?.sys.country} </span>
         </p>
         <p className='font-semibold flex  items-center text-4xl pt-5 '>
@@ -51,6 +52,7 @@ const Home = (props) => {
         </p>
 
       </div>
+   </div>
 
       <div className='grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mt-3  '>
         {
