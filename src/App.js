@@ -10,7 +10,7 @@ function App() {
   const { data , isLoading } = useQuery({
     queryKey: ['weather'],
     queryFn: () =>
-      fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&APPID=5555e631eb25d2ee80e48fc82a3ae893`).then(
+      fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName===''?"Islamabad":cityName}&units=metric&APPID=5555e631eb25d2ee80e48fc82a3ae893`).then(
         (res) => res.json(),
       ),
   })
@@ -19,12 +19,14 @@ function App() {
     return <Spinner/>
   }
 
+  console.log(cityName);
+  console.log(data);
 
   return (
     <div className="bg-[#f5f2ed] satisfy">
-      <div>
+      
         <Navbar/>
-      </div>
+      
 
       <div>
         <Home data={data}/>
