@@ -36,7 +36,7 @@ const Home = (props) => {
           <p className='font-semibold  text-4xl md:text-6xl pt-12  '>
             <span>{weatherData?.name} , {weatherData?.sys?.country} </span>
           </p>
-          <p className='font-semibold flex  items-center text-4xl pt-5 '>
+          <p className='font-semibold flex  items-center text-4xl   '>
             <span>{weatherData?.main?.temp}°C</span>
             <img className='w-24 h-24' src={`https://openweathermap.org/img/w/${weatherData?.weather[0]?.icon}.png`}
               alt="Weather Icon"
